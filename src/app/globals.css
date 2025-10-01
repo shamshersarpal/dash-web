@@ -43,6 +43,10 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+.readto-start-bg{
+   background: linear-gradient(90deg, #ff0080, #7928ca, #7928ca);
+}
+
 .logo{
   width: 140px;
 }
@@ -366,13 +370,15 @@ img.questionRight {
 }
 
  .footer {
-  border-radius: 40px 40px 0px 0px;
-  border-top: solid 1.5px #14F6FE;
-  box-shadow: inset 0px 2px #ED0EEB;
+  background-color: #242424;
   padding: 55px 0;
 }
 
 @media screen and (max-width: 767px) {
+  .login-page {
+    margin-top: 100px;
+    margin-bottom: 28px;
+}
   button.faq-question {
     padding-right: 85px !important;
 }

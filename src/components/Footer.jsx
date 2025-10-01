@@ -27,8 +27,8 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="border border-t-[#242424] ">
-            <div className="border border-l-[#282828] border-r-[#282828] mx-4">
+          <div className="  ">
+            <div className="  mx-4">
               <h4 className="text-white text-[18px] font-[600] px-2 pt-4">
                 Company
               </h4>
@@ -93,8 +93,8 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          <div className="border border-b-[#242424] border-t-[#242424] ">
-            <div className="border border-l-[#282828] border-r-[#282828] mx-4">
+          <div className=" ">
+            <div className="  mx-4">
               <h4 className="text-white text-[18px] font-[600] px-2 pt-4 text-center">
                 Follow
               </h4>

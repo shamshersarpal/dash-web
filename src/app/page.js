@@ -10,6 +10,7 @@ import WhyDash from "@/components/WhyDash";
 import FourBoxes from "@/components/FourBoxes"
 import Image from "next/image";
 import OwlCarousel from "@/components/owl";
+import ReadytoStart from "@/components/ReadytoStart";
 
 export default function Home() {
   return (
@@ -21,6 +22,9 @@ export default function Home() {
     
    <BestProducts/> 
    <SaveMemories/>
+   <ClientsSay/>
+   <ReadytoStart/>
+   <Footer/>
   
     </>
   );

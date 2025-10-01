@@ -144,7 +144,7 @@ export default function Header() {
                   <Image src={cart} alt="Cart" width={30} height={30} />
                 </div>
               
-                <Link href="Login" passHref>
+                <Link href="LoginPhone" passHref>
                   <button type="button" className="loginBtn">
                     Login
                   </button>

@@ -4,6 +4,11 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import google from "@/images/google.svg";
 
+export const metadata = {
+  title: "DASH | Email Login",
+  description: "DASH dashboard",
+};
+
 export default function LoginEmail() {
   return (
     <>

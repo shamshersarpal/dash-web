@@ -44,7 +44,7 @@ body {
 }
 
 .readto-start-bg{
-   background: linear-gradient(90deg, #ff0080, #7928ca, #7928ca);
+   background: linear-gradient(90deg, #ff0080, #7928ca);
 }
 
 .logo{
@@ -459,4 +459,8 @@ button.owl-dot {
 button.owl-dot.active{
   border-color: #ED0EEB !important;
   background: #00ffff !important;
+}
+
+section.mainDiv {
+    margin: 125px 0;
 }

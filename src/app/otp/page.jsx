@@ -45,7 +45,7 @@ export default function otp() {
                   </span>
                 </div>
 
-                <Link href="#" passHref>
+                <Link href="create-dash" passHref>
                   <button
                     className="mainBtn h-[52px] mt-3 text-[18px] font-[600] inline-flex items-center justify-center px-6 w-full"
                     type="submit"

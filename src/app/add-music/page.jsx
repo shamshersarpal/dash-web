@@ -41,7 +41,7 @@ export default function addmusic() {
           </div>
           {/* Step 2 */}
           <div className="flex items-center">
-            <Link href="" passHref>
+            <Link href="add-photos" passHref>
               <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-200">
                 {/* Upload Icon */}
                 <svg
@@ -182,7 +182,8 @@ export default function addmusic() {
             </div>
 
             {/* Card 4 (Next CTA) */}
-            <div className="bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center cursor-pointer transition hover:opacity-90 lg:py-20 py-10">
+          <Link className="h-full" href="/add-photos" passHref>
+              <div className="bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center cursor-pointer transition hover:opacity-90 lg:py-20 py-10 h-full">
               <svg
                 width={70}
                 height={70}
@@ -196,6 +197,7 @@ export default function addmusic() {
                 />
               </svg>
             </div>
+          </Link>
           </section>
         </div>
       </section>

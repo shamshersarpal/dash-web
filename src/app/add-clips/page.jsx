@@ -1,25 +1,24 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Link from "next/link";
 
-export default function AddPhotos() {
-  const [photos, setPhotos] = useState({
+export default function AddClips() {
+  const [videos, setVideos] = useState({
     Childhood: [],
     Teenage: [],
     Recent: [],
   });
 
-  const handlePhotoUpload = (event, category) => {
+  const handleVideoUpload = (event, category) => {
     const files = Array.from(event.target.files);
-    const newPhotos = [...photos[category]];
     files.forEach((file) => {
-      if (newPhotos.length < 3) {
+      if (videos[category].length < 3) {
         const reader = new FileReader();
         reader.onload = (e) => {
-          setPhotos((prev) => ({
+          setVideos((prev) => ({
             ...prev,
             [category]: [...prev[category], e.target.result],
           }));
@@ -29,9 +28,11 @@ export default function AddPhotos() {
     });
   };
 
-  const handleRemovePhoto = (category, index) => {
-    const updated = photos[category].filter((_, i) => i !== index);
-    setPhotos((prev) => ({ ...prev, [category]: updated }));
+  const handleRemoveVideo = (category, index) => {
+    setVideos((prev) => ({
+      ...prev,
+      [category]: prev[category].filter((_, i) => i !== index),
+    }));
   };
 
   return (
@@ -42,9 +43,8 @@ export default function AddPhotos() {
         <div className="flex items-center justify-center">
           {/* Step 1 */}
           <div className="flex items-center">
-            <Link href="add-music" passHref>
+            <Link href="/add-music" passHref>
               <div className="flex items-center justify-center w-12 h-12 rounded-full readto-start-bg text-white">
-                {/* Music Icon */}
                 <svg
                   width={20}
                   height={20}
@@ -64,10 +64,11 @@ export default function AddPhotos() {
             </Link>
             <div className="w-[50px] h-[2px] readto-start-bg" />
           </div>
+
           {/* Step 2 */}
           <div className="flex items-center">
-            <Link href="add-photos" passHref>
-              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-200">
+            <Link href="/add-photos" passHref>
+              <div className="flex items-center justify-center w-12 h-12 rounded-full readto-start-bg">
                 <svg
                   width={20}
                   height={20}
@@ -77,7 +78,7 @@ export default function AddPhotos() {
                 >
                   <path
                     d="M34.5789 16.1579H34.6053M28 50.3684H10.8947C8.80092 50.3684 6.79287 49.5367 5.31232 48.0561C3.83176 46.5756 3 44.5675 3 42.4737V10.8947C3 8.80092 3.83176 6.79287 5.31232 5.31232C6.79287 3.83176 8.80092 3 10.8947 3H42.4737C44.5675 3 46.5756 3.83176 48.0561 5.31232C49.5367 6.79287 50.3684 8.80092 50.3684 10.8947V28M3 37.2105L16.1579 24.0526C18.6 21.7026 21.6105 21.7026 24.0526 24.0526L34.5789 34.5789M31.9474 31.9474L34.5789 29.3158C36.3421 27.6211 38.3947 27.1474 40.3211 27.8948M37.2105 45.1053H53M45.1053 37.2105V53"
-                    stroke="#121212"
+                    stroke="#ffffff"
                     strokeWidth="4.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -85,11 +86,12 @@ export default function AddPhotos() {
                 </svg>
               </div>
             </Link>
-            <div className="w-16 h-[2px] bg-gray-300" />
+            <div className="w-16 h-[2px] readto-start-bg" />
           </div>
+
           {/* Step 3 */}
           <div className="flex items-center">
-            <Link href="add-clips" passHref>
+            <Link href="/add-clips" passHref>
               <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-200">
                 <svg
                   width={23}
@@ -120,10 +122,10 @@ export default function AddPhotos() {
 
         <div className="max-w-screen-xl mx-auto px-4">
           <h2 className="text-white lg:text-4xl text-2xl text-center mt-10 mb-2">
-            Photos from time in your life
+            Video clips from time in your life
           </h2>
           <p className="text-center text-[#BBBBBB] text-small">
-            Choose photo for each chapter of their life.
+            Upload up to 3 clips for each chapter of their life.
           </p>
 
           {/* Cards Section */}
@@ -131,53 +133,60 @@ export default function AddPhotos() {
             {["Childhood", "Teenage", "Recent"].map((category) => (
               <div
                 key={category}
-                className="bg-[#282828] rounded-xl flex flex-col items-center justify-center lg:py-20 py-10   hover:bg-[#2a2a2a] transition text-white"
+                className="bg-[#282828] rounded-xl flex flex-col items-center justify-center lg:py-20 py-10 hover:bg-[#2a2a2a] transition text-white"
               >
                 <svg
-                  width={56}
-                  height={56}
-                  viewBox="0 0 108 108"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M67.1579 30.3158H67.2105M54 98.7368H19.7895C15.6018 98.7368 11.5857 97.0733 8.62463 94.1122C5.66353 91.1511 4 87.135 4 82.9474V19.7895C4 15.6018 5.66353 11.5857 8.62463 8.62463C11.5857 5.66353 15.6018 4 19.7895 4H82.9474C87.135 4 91.1511 5.66353 94.1122 8.62463C97.0733 11.5857 98.7368 15.6018 98.7368 19.7895V54M4 72.421L30.3158 46.1052C35.2 41.4052 41.2211 41.4052 46.1053 46.1052L67.1579 67.1579M61.8947 61.8948L67.1579 56.6316C70.6842 53.2421 74.7895 52.2948 78.6421 53.7895M72.4211 88.2105H104M88.2105 72.4211V104"
-                    stroke="white"
-                    strokeWidth={8}
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+  width={56}
+  height={40}
+  viewBox="0 0 108 78"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M81.8389 23.7458V53.6592L104 74V4L81.8389 23.7458Z"
+    stroke="white"
+    strokeWidth={8}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  />
+  <path
+    d="M8.92778 4H64.9278C73.0834 4 81.7778 11.0175 81.7778 20.3508V68.1608C81.7912 69.687 81.2292 71.1569 80.2145 72.2497C79.1997 73.3425 77.8146 73.9696 76.3612 73.9942H18.7333C9.47223 73.9942 4 65.2442 4 56.4942L4.05556 9.8275C3.95104 9.09047 4.00024 8.3384 4.19976 7.6233C4.39928 6.9082 4.74435 6.24714 5.21111 5.68583C5.6722 5.13147 6.24618 4.69315 6.89052 4.40334C7.53485 4.11353 8.23304 3.97967 8.93334 4.01167L8.92778 4Z"
+    stroke="white"
+    strokeWidth={8}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  />
+</svg>
+
 
                 <h3 className="text-2xl font-medium mt-4">{category}</h3>
-                <p className="text-sm text-gray-400">Upload up to 3 photos</p>
+                <p className="text-sm text-gray-400">Upload up to 3 videos</p>
 
-                {/* Inline Upload + Preview */}
                 <div className="flex gap-2 mt-4">
-                  {photos[category].map((src, index) => (
+                  {videos[category].map((src, index) => (
                     <div key={index} className="relative">
-                      <img
+                      <video
                         src={src}
-                        alt=""
+                        controls
                         className="w-20 h-20 object-cover rounded-md"
                       />
                       <button
-                        onClick={() => handleRemovePhoto(category, index)}
+                        onClick={() => handleRemoveVideo(category, index)}
                         className="absolute top-1 right-1 bg-black/70 text-xs px-2 rounded-full"
                       >
                         ✕
                       </button>
                     </div>
                   ))}
-                  {photos[category].length < 3 && (
+                  {videos[category].length < 3 && (
                     <label className="flex items-center justify-center w-20 h-20 border border-dashed border-gray-500 rounded-md cursor-pointer hover:bg-[#333]">
                       +
                       <input
                         type="file"
-                        accept="image/*"
+                        accept="video/*"
                         multiple
                         className="hidden"
-                        onChange={(e) => handlePhotoUpload(e, category)}
+                        onChange={(e) => handleVideoUpload(e, category)}
                       />
                     </label>
                   )}
@@ -186,8 +195,7 @@ export default function AddPhotos() {
             ))}
 
             {/* Next CTA */}
-             <Link className="h-full" href="add-clips" passHref>
-              <div className="bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center cursor-pointer transition hover:opacity-90 lg:py-20 py-10 h-full">
+            <div className="bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center cursor-pointer transition hover:opacity-90 lg:py-20 py-10">
               <svg
                 width={70}
                 height={70}
@@ -201,7 +209,6 @@ export default function AddPhotos() {
                 />
               </svg>
             </div>
-          </Link>
           </section>
         </div>
       </section>

@@ -16,7 +16,7 @@ export default function addmusic() {
         <div className="flex items-center justify-center">
           {/* Step 1 */}
           <div className="flex items-center">
-            <Link href="/add-music" passHref>
+            <Link href="add-music" passHref>
               <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-200">
                 {/* Music Icon */}
                 <svg
@@ -66,7 +66,7 @@ export default function addmusic() {
           </div>
           {/* Step 3 */}
           <div className="flex items-center">
-            <Link href="" passHref>
+            <Link href="add-clips" passHref>
               <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gray-200">
                 {/* Video Icon */}
                 <svg

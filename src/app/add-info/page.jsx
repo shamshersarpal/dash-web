@@ -61,14 +61,17 @@ export default function AddInfoPage() {
                   />
                 </div>
 
-                {/* Buttons */}
+               
                 <div className="flex flex-col items-center space-y-3 pt-4">
+                  <Link
+                    href="dash-createing">
                   <button
                     type="submit"
                     className="mainBtn h-[52px] w-full text-[18px] font-[600] inline-flex items-center justify-center px-6"
                   >
                     NEXT
                   </button>
+                  </Link>
                   <Link
                     href="play-dash"
                     className="text-white text-[16px] hover:underline"

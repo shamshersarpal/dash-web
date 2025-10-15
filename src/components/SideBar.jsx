@@ -141,7 +141,7 @@ export default function SideBar() {
 
 
             <li>
-              <Link href="#" passHref legacyBehavior>
+              <Link href="templates" passHref legacyBehavior>
                 <a className="flex items-center p-2 text-white rounded-lg   hover:bg-gray-100 hover:text-gray-700   group font-[400]">
                  <svg
                     width={22}
@@ -170,7 +170,7 @@ export default function SideBar() {
 
             <>
               <li>
-                <Link href="#" passHref legacyBehavior>
+                <Link href="payments" passHref legacyBehavior>
                   <a className="flex items-center p-2 text-white rounded-lg   hover:bg-gray-100 hover:text-gray-700   group font-[400]">
                    <svg
   className="  "

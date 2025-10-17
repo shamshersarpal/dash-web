@@ -8,6 +8,7 @@ import proTwo from "@/images/pro-2.jpg";
 import proThree from "@/images/pro-3.jpg";
 import proFour from "@/images/pro-4.jpg";
 import proFive from "@/images/pro-5.jpg";
+import Link from "next/link";
 
 export default function dashList() {
   const [selectedCard, setSelectedCard] = useState(null);
@@ -62,9 +63,11 @@ export default function dashList() {
                   {/* Centered Next Button */}
                   {selectedCard === card.id && (
                     <div className="absolute inset-0 flex justify-center items-center bg-black/60 rounded-[30px]">
+                       <Link href="buy-now" passHref legacyBehavior>
                       <button className="mainBtn h-[52px] mt-3 text-[18px] font-[600] inline-flex items-center justify-center px-6 cursor-pointer min-w-[150px]">
                         Next
                       </button>
+                      </Link>
                     </div>
                   )}
                 </div>
